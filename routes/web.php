@@ -14,10 +14,14 @@
 use App\User;
 
 Route::get('/', function () {
-    $user = new User();
-    $user->name= "foo";
-    $user->save();
+    // $user = new User();
+    // $user->name= "foo";
+    // $user->save();
 
-    $user = User::findOrFail($user->id);
-    return $user;
+    // $user = User::findOrFail($user->id);
+    // return $user;
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
